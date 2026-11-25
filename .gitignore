@@ -1,0 +1,15 @@
+# Environment variables and secrets
+.env
+
+# Python bytecode and caches
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+
+# Temporary files
+*.tmp
+
+# OS generated files
+.DS_Store
