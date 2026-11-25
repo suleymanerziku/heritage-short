@@ -1,10 +1,10 @@
 {
-  "input_hash": "b3b0ce6d80ca",
+  "input_hash": "22f5c68a601a",
   "shot_id": "shot_01",
-  "model": "@cf/black-forest-labs/flux-2-klein-9b",
+  "model": "black-forest-labs/flux-3-image-klein",
   "seed": 42001,
   "full_prompt": "Wide establishing shot of a modest Addis Ababa family home in heavy Kiremt rain: a low house with a rust-streaked corrugated iron roof, rainwater streaming off the eaves in silver strings, a green-painted wooden doorway at dead center glowing warm amber with a thin curl of pale smoke drifting out. Wet red-brown earth lane with puddles reflecting the amber light, tall eucalyptus trees and misty green hills fading into low grey cloud behind. Cool blue-grey overcast light outside, warm firelit glow inside the doorway, no people, 35mm anamorphic documentary film look, fine film grain, quiet and moody. 35mm anamorphic documentary film look, dim Addis Ababa home interior on a rainy afternoon, crimson charcoal-ember glow against cool grey window light, fresh green grass on the floor, fine film grain, shallow depth of field, photorealistic dark skin tones",
   "width": 1024,
   "height": 1024,
-  "latency_s": 18.397
+  "latency_s": 11.554
 }

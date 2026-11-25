@@ -1,0 +1,89 @@
+{
+  "project_title": "Heritage Short: The Patience of Buna",
+  "fps": 24,
+  "negative_prompt_video": "blurry, low quality, jpeg artifacts, flicker, morphing or melting faces, distorted hands, extra fingers, extra limbs, duplicate people, warped or melting pan, sudden lighting change, jerky motion, fast camera movement, shaky camera, text, subtitles, watermark, logo, gas stove, electric stove, modern kitchen counter, espresso machine, coffee mug with handle, glass cup",
+  "total_shots": 9,
+  "shots": [
+    {
+      "shot_id": "shot_01",
+      "keyframe_path": "outputs/keyframes/shot_01.png",
+      "motion_prompt": "Rain falls steadily and streams off the tin eaves in silver strings, puddles ripple, a thin curl of pale smoke drifts out of the glowing doorway and the amber light flickers softly. The camera makes a slow, smooth tilt down from the wet roof edge to the doorway, then eases forward slightly. Gentle contemplative pace, natural motion, stable framing.",
+      "seed": 42001,
+      "target_duration_s": 8.27,
+      "ken_burns_motion": "zoom_in",
+      "input_hash": "c4389b82c2e5"
+    },
+    {
+      "shot_id": "shot_02",
+      "keyframe_path": "outputs/keyframes/shot_02.png",
+      "motion_prompt": "The mother gently scatters handfuls of fresh grass with both hands and smooths it across the floor, then reaches toward the stove; the embers pulse brighter and dim, the incense smoke curls up slowly, soft rain light flickers on the window behind her. The camera makes a slow, subtle push-in toward her hands and the stove. Calm, unhurried pace, natural hand movement.",
+      "seed": 42002,
+      "target_duration_s": 8.89,
+      "ken_burns_motion": "zoom_in",
+      "input_hash": "299368a5b984"
+    },
+    {
+      "shot_id": "shot_03",
+      "keyframe_path": "outputs/keyframes/shot_03.png",
+      "motion_prompt": "The last green beans slide off the straw tray into the pan with a soft clatter and settle; the beans shift slightly as the pan warms, a few pale chaff flakes lift and drift, heat shimmer ripples above the embers. The camera holds a steady overhead macro with a very slow drift to the left. Calm, deliberate pace.",
+      "seed": 42003,
+      "target_duration_s": 6.92,
+      "ken_burns_motion": "pan_left",
+      "input_hash": "4a4ba3f8f942"
+    },
+    {
+      "shot_id": "shot_04",
+      "keyframe_path": "outputs/keyframes/shot_04.png",
+      "motion_prompt": "The mother slowly stirs the beans in lazy circles with the hooked iron rod and gives the pan a gentle shake by its long handle, the pale beans tumbling and thin white smoke curling upward; she keeps her eyes on the pan with a faint, patient smile. Across the stove the boy leans further forward on his stool, glances from the pan up to his mother and back, shifts restlessly and lets out a small impatient breath, mouth mostly closed. Embers pulse softly, rain trickles down the window behind her, the empty cups in the foreground stay still. The camera makes a slow, subtle push-in toward the stove between them, stable framing. Calm, natural pace.",
+      "seed": 42004,
+      "target_duration_s": 7.16,
+      "ken_burns_motion": "zoom_in",
+      "input_hash": "0154d7c01fa7"
+    },
+    {
+      "shot_id": "shot_05",
+      "keyframe_path": "outputs/keyframes/shot_05.png",
+      "motion_prompt": "She slowly stirs the beans in a lazy circle with the iron hook rod, the beans tumbling and glistening; her smile warms and she gives a small affectionate nod toward her son off-screen. Thick white smoke curls up past her face and drifts across the lens, embers pulse softly. Slow-motion feel, gentle slow push-in with a slight drift. Calm, soothing pace.",
+      "seed": 42005,
+      "target_duration_s": 8.12,
+      "ken_burns_motion": "zoom_in",
+      "input_hash": "cbac82c6487b"
+    },
+    {
+      "shot_id": "shot_06",
+      "keyframe_path": "outputs/keyframes/shot_06.png",
+      "motion_prompt": "Beans pop and jump slightly, tumbling over one another as the hook rod turns them; thin ribbons of white smoke rise and drift past the lens, ember glow pulses beneath the pan. The camera makes an extremely slow pan from left to right across the beans. Slow, sensory, calm pace.",
+      "seed": 42006,
+      "target_duration_s": 8.64,
+      "ken_burns_motion": "pan_right",
+      "input_hash": "63e3911be6b8"
+    },
+    {
+      "shot_id": "shot_07",
+      "keyframe_path": "outputs/keyframes/shot_07.png",
+      "motion_prompt": "She speaks slowly and tenderly, lips moving softly, with a gentle blink, a slight tilt of her head and a knowing warm smile at the end; ember light flickers across her face, raindrops trace slow paths down the window glass behind her, incense smoke drifts. The camera makes a slow, steady cinematic push-in toward her eyes. Calm, reassuring pace, subtle natural expression.",
+      "seed": 42007,
+      "target_duration_s": 9.02,
+      "ken_burns_motion": "zoom_in",
+      "input_hash": "1f6753902f0f"
+    },
+    {
+      "shot_id": "shot_08",
+      "keyframe_path": "outputs/keyframes/shot_08.png",
+      "motion_prompt": "A thin dark stream of coffee pours steadily from the spout into the first cup as it fills, steam rising and curling in the firelight; the hand holding the jebena keeps its height and glides slowly along the row of cups. The camera makes a smooth steady tracking move following the stream with a slight lateral drift. Ember light shimmers on the coffee surface. Smooth, graceful pace.",
+      "seed": 42008,
+      "target_duration_s": 8.92,
+      "ken_burns_motion": "zoom_out",
+      "input_hash": "0d04d24c111f"
+    },
+    {
+      "shot_id": "shot_09",
+      "keyframe_path": "outputs/keyframes/shot_09.png",
+      "motion_prompt": "The man slowly lifts the cup, inhales the steam with his eyes closing, and a faint smile settles; steam curls from the cup, raindrops run down the window glass, the warm lamp light flickers very slightly. The camera makes a slow cinematic pull-back revealing more of the rain-streaked window and the room. Serene, unhurried pace.",
+      "seed": 42009,
+      "target_duration_s": 10.84,
+      "ken_burns_motion": "zoom_out",
+      "input_hash": "ad12ab6c5cca"
+    }
+  ]
+}

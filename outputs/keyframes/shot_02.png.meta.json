@@ -1,10 +1,10 @@
 {
-  "input_hash": "88016f62031f",
+  "input_hash": "951a1ec78ca5",
   "shot_id": "shot_02",
-  "model": "@cf/black-forest-labs/flux-2-klein-9b",
+  "model": "black-forest-labs/flux-3-image-klein",
   "seed": 42002,
   "full_prompt": "Medium shot inside a dim Addis Ababa living room on a rainy afternoon: an Ethiopian mother in her late 40s, rich warm dark-brown skin, neat shuruba cornrows, white handwoven cotton habesha kemis with green-and-gold tilet neckline, kneeling and spreading fresh green ketema grass across the floor, a few small yellow daisies scattered in it, serene face looking down at her work. At center beside her, a low terracotta charcoal stove glows with crimson embers; a black round-bottomed clay jebena with a long neck and a small clay incense burner with a thin trail of smoke sit nearby. Warm ember light on her face, cool grey rain light from a window behind, 35mm anamorphic documentary look, shallow depth of field. 35mm anamorphic documentary film look, dim Addis Ababa home interior on a rainy afternoon, crimson charcoal-ember glow against cool grey window light, fresh green grass on the floor, fine film grain, shallow depth of field, photorealistic dark skin tones",
   "width": 1024,
   "height": 1024,
-  "latency_s": 15.248
+  "latency_s": 11.19
 }
