@@ -300,6 +300,16 @@ def probe_audio_duration(filepath: str) -> float:
         return float(raw_output)
 
     except FileNotFoundError as e:
+        if filepath.lower().endswith(".wav"):
+            try:
+                import wave
+                with wave.open(filepath, "rb") as wf:
+                    frames = wf.getnframes()
+                    rate = wf.getframerate()
+                    if rate > 0:
+                        return float(frames) / float(rate)
+            except Exception:
+                pass
         raise FileNotFoundError(
             "ffprobe binary not found in system PATH. Ensure ffmpeg/ffprobe is installed."
         ) from e

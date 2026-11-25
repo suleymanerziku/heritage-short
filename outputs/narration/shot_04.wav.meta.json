@@ -1,0 +1,9 @@
+{
+  "input_hash": "fce136c17aec",
+  "duration_s": 15.32,
+  "pad_after_s": 0.4,
+  "model": "gemini-3.8-flash-tts",
+  "sample_rate": 24000,
+  "channels": 1,
+  "latency_s": 7.18
+}

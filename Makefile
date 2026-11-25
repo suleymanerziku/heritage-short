@@ -17,7 +17,7 @@ smoke:
 	$(PYTHON) pipeline/smoke_test.py
 
 narration:
-	$(PYTHON) pipeline/generate_narration.py
+	$(PYTHON) pipeline/narration.py
 
 radio_cut:
 	$(PYTHON) pipeline/assemble_radio_cut.py

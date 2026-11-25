@@ -183,11 +183,18 @@ def run_gemini_tts_smoke(api_key: str) -> Tuple[bool, str, float, Optional[str]]
         # Try REST API with audio responseModality
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
         payload = {
+            "systemInstruction": {
+                "parts": [
+                    {
+                        "text": "You are a professional voice actor. Speak only the user's provided text verbatim with natural pacing. Do not read instructions or add introductory remarks."
+                    }
+                ]
+            },
             "contents": [
                 {
                     "parts": [
                         {
-                            "text": f"Please read this Amharic greeting aloud clearly with natural pacing: {amharic_greeting}"
+                            "text": amharic_greeting
                         }
                     ]
                 }
