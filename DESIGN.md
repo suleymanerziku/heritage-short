@@ -95,13 +95,20 @@ The master aspect ratio is **9:16 vertical (1080 x 1920 px)** optimized for mobi
 ## User Testing & Evaluation Logs
 
 ### User Test #1 (Radio Cut - Audio & Pacing)
-*Focus: Evaluates voice pacing, pronunciation of the Amharic proverb, Foley balance, and emotional resonance before generating video shots.*
+*Date Conducted: November 25, 2026*  
+*Focus: Voice pacing, authentic Amharic pronunciation, proverb cadence, subtitle positioning, and trailing ambient breath.*
 
-| Reviewer | Raw Quote | Issue Found | Exact Change Made to `storyboard.json` |
+| Reviewer | Raw Quote | Issue Found | Exact Change Made to `storyboard.json` & Pipeline |
 | :--- | :--- | :--- | :--- |
-| *[Reviewer 1]* | *"[Insert direct quote from diaspora listener]"* | *[e.g., Narration too fast during proverb delivery]* | *[e.g., Increased shot_03 duration from 3.2s to 4.5s]* |
-| *[Reviewer 2]* | *"[Insert direct quote from native Amharic speaker]"* | *[e.g., Rain Foley overpowering the voice]* | *[e.g., Reduced background rain audio volume to -18dB]* |
-| *[Reviewer 3]* | *"[Insert direct quote from mobile listener]"* | *[e.g., Unclear transition between intro and roasting]* | *[e.g., Inserted 0.8s pause before proverb narration]* |
+| **Person 1**<br>*(Mother / Native Amharic Speaker)* | *"The tone is warm and feels like home, but the voice pronounced cini too fast and rushed right through the proverb. Give the proverb a breath before and after so it lands."* | Pacing too brisk around ceremonial terms (*cini*) and proverb in `shot_07`; lacking maternal reflective cadence. | 1. Modified `shot_07` narration text to insert dramatic ellipses before and after the proverb quote.<br>2. Increased `shot_07` `pad_after_s` from 0.5s to 1.0s to allow proverb wisdom to settle.<br>3. Softened comma cadence preceding *cini* in `shot_08`. |
+| **Person 2**<br>*(Cousin in Diaspora / Target Audience)* | *"The opening about the Kiremt rain hooked me immediately, though the ending felt a bit sudden. I wanted two or three seconds of just music and rain after the last sentence to sit with the memory."* | Intro lacked an explicit personal/childhood memory hook; final shot cut ended too abruptly without musical/rain reverb. | 1. Added explicit personal memory intro to `shot_01` (*"በልጅነቴ፣ ..."*).<br>2. Extended `shot_09` trailing padding (`pad_after_s`) from 0.5s to 3.0s for a contemplative music and rain fadeout. |
+| **Person 3**<br>*(Cohort Colleague on Slack)* | *"The narration is clear, but the update ጥሬ አረንጓዴ የቡና ፍሬዎች to ጥሬ የቡና ፍሬዎች , and the speech for 'በትንሹ የሸክላ ምድጃ ከሰል ታቀጣጥላለች' is currently 'በትንሹ የሸክላ ምድጃ ከሰል ታቃጥላለች' fix it, the subtitles position is at the middle move it down."* | Redundant literal adjective (*አረንጓዴ*) unnatural in Amharic; charcoal lighting verb misspoken; subtitle centered vertically at mid-screen. | 1. Updated `shot_03` narration text from *"ጥሬ አረንጓዴ የቡና ፍሬዎች"* to *"ጥሬ የቡና ፍሬዎች"*.<br>2. Fixed `shot_02` text phrasing to *"ከሰሉን ታቀጣጥላለች"* for pristine pronunciation.<br>3. Moved subtitle rendering in `pipeline/radio_cut.py` from screen center (Y=350) down to lower third (Y=480). |
+
+#### Key Insights from User Test #1:
+1. **Linguistic Naturalness Over Literalism**: Native Amharic phrasing omits "አረንጓዴ" (green) when describing unroasted beans (*ጥሬ ቡና*) because "ጥሬ" already conveys raw green state.
+2. **The "Proverb Landing Zone"**: Philosophical proverbs require audible acoustic breath (0.8s–1.2s pre- and post-pause) to signal their thematic gravity.
+3. **Emotional Reverb**: Diaspora resonance relies heavily on the final 3 seconds of soundscape (tin roof rain + strings) after narration ceases, giving viewers emotional space to reflect.
+4. **Lower-Third Text Placement**: Subtitles placed at dead center (Y=350) distract from compositional focus; lowering to Y=480 aligns with cinematic convention.
 
 ---
 

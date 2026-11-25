@@ -79,12 +79,12 @@ def create_shot_slide(
 
     # 1. Header (e.g. "[SHOT 01]  •  ESTABLISHING")
     header_str = f"[{shot_id.upper()}]   •   {shot_type.upper().replace('_', ' ')}"
-    draw.text((center_x, 260), header_str, font=font_header, fill=(245, 195, 95), anchor="mm")
+    draw.text((center_x, 220), header_str, font=font_header, fill=(245, 195, 95), anchor="mm")
 
-    # 2. Subtitle with line wrapping
-    wrapped_lines = textwrap.wrap(f'"{subtitle_en}"', width=52)
-    start_y = 350
-    line_spacing = 42
+    # 2. Subtitle with line wrapping (Lower third placement)
+    wrapped_lines = textwrap.wrap(f'"{subtitle_en}"', width=54)
+    start_y = 480
+    line_spacing = 40
 
     for i, line in enumerate(wrapped_lines):
         line_y = start_y + (i * line_spacing)
@@ -92,7 +92,7 @@ def create_shot_slide(
 
     # 3. Footer / Watermark
     footer_text = "HERITAGE-SHORT  |  RADIO CUT PROTOTYPE  •  AUDIO PACING REVIEW"
-    draw.text((center_x, height - 50), footer_text, font=font_footer, fill=(120, 120, 120), anchor="mm")
+    draw.text((center_x, height - 35), footer_text, font=font_footer, fill=(110, 110, 110), anchor="mm")
 
     os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
     img.save(output_path, "PNG")

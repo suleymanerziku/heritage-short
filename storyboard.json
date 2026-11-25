@@ -25,8 +25,8 @@
       "id": "shot_01",
       "reason": "Establishes the contemplative mood and rainy Addis Ababa Kiremt setting outside the family home.",
       "shot_type": "establishing",
-      "narration_text": "በአዲስ አበባ የክረምት ዝናብ በቆርቆሮው ጣሪያ ላይ ያለማቋረጥ ሲዘንብ፣ ቤታችን በልዩ ሙቀት ይሞላል።",
-      "subtitle_en": "When Kiremt rain drums endlessly on the tin roof, our home fills with warmth.",
+      "narration_text": "በልጅነቴ፣ በአዲስ አበባ የክረምት ዝናብ በቆርቆሮው ጣሪያ ላይ ያለማቋረጥ ሲዘንብ፣ ቤታችን በልዩ ሙቀት ይሞላል።",
+      "subtitle_en": "In childhood, when Kiremt rain drummed on the roof, our home filled with warmth.",
       "tts_style": "warm, contemplative, nostalgic",
       "tts_voice": "Puck",
       "image_prompt": "Centered view of an Addis Ababa neighborhood during heavy rainy season, green eucalyptus hills in distance, rain dripping from corrugated iron roof eaves, warm amber interior light glowing from a doorway in the center, misty atmosphere.",
@@ -40,8 +40,8 @@
       "id": "shot_02",
       "reason": "Introduces the mother preparing the ceremonial space with traditional green grass and clay stove.",
       "shot_type": "medium",
-      "narration_text": "እማዬ ሁልጊዜ ከሰዓት በኋላ ለምለም የቄጠማ ሣር ወለሉ ላይ ጎዝጉዛ፣ በትንሹ የሸክላ ምድጃ ከሰል ታቀጣጥላለች።",
-      "subtitle_en": "Mother spreads fresh green grass and lights charcoal in the clay stove.",
+      "narration_text": "እማዬ ሁልጊዜ ከሰዓት በኋላ ለምለም የቄጠማ ሣር ወለሉ ላይ ጎዝጉዛ፣ በትንሹ የሸክላ ምድጃ ከሰሉን ታቀጣጥላለች።",
+      "subtitle_en": "Mother spreads fresh green grass and kindles charcoal in the clay stove.",
       "tts_style": "gentle, reverent, affectionate",
       "tts_voice": "Puck",
       "image_prompt": "Centered medium shot of an Ethiopian mother in white Habesha Kemis arranging fresh green ketema grass across a clean wooden floor, beside a traditional clay stove with red embers glowing warmly in the center.",
@@ -55,8 +55,8 @@
       "id": "shot_03",
       "reason": "Focuses on raw green coffee beans entering the black iron pan, initiating the transformation ritual.",
       "shot_type": "insert",
-      "narration_text": "ጥሬ አረንጓዴ የቡና ፍሬዎች በጠቆረው የብረት ምጣድ ላይ ሲቀመጡ፣ የዕለቱ የቡና ሥነ-ሥርዓት በይፋ ይጀምራል።",
-      "subtitle_en": "Raw green coffee beans placed on the black iron pan begin the sacred ceremony.",
+      "narration_text": "ጥሬ የቡና ፍሬዎች በጠቆረው የብረት ምጣድ ላይ ሲቀመጡ፣ የዕለቱ የቡና ሥነ-ሥርዓት በይፋ ይጀምራል።",
+      "subtitle_en": "Raw coffee beans placed on the black iron pan begin the sacred ceremony.",
       "tts_style": "deliberate, focused, rhythmic",
       "tts_voice": "Puck",
       "image_prompt": "Centered overhead insert shot of fresh pale-green unroasted coffee beans resting in a circular black cast-iron pan set over glowing orange embers in a clay stove.",
@@ -115,7 +115,7 @@
       "id": "shot_07",
       "reason": "The philosophical apex of the film: mother delivers the proverb teaching life-long patience.",
       "shot_type": "medium_close_up",
-      "narration_text": "እማዬም ቀስ ብላ 'ልጄ ሆይ፣ ቀስ በቀስ እንቁላል በእግሩ ይሄዳል፤ መቻኮል ቡናንም ሆነ ሕይወትን ያበላሻል' ትለኛለች።",
+      "narration_text": "እማዬም ቀስ ብላ... 'ልጄ ሆይ፣ ቀስ በቀስ እንቁላል በእግሩ ይሄዳል'... መቻኮል ቡናንም ሆነ ሕይወትን ያበላሻል።",
       "subtitle_en": "She said: 'Slowly, an egg learns to walk; rushing ruins both coffee and life.'",
       "tts_style": "profound, gentle, maternal wisdom",
       "tts_voice": "Puck",
@@ -124,7 +124,7 @@
       "seed": 42007,
       "video_mode": "wan22",
       "ken_burns_motion": "zoom_in",
-      "pad_after_s": 0.5
+      "pad_after_s": 1.0
     },
     {
       "id": "shot_08",
@@ -154,7 +154,7 @@
       "seed": 42009,
       "video_mode": "wan22",
       "ken_burns_motion": "zoom_out",
-      "pad_after_s": 0.5
+      "pad_after_s": 3.0
     }
   ]
 }
