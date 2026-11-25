@@ -20,7 +20,7 @@ narration:
 	$(PYTHON) pipeline/narration.py
 
 radio_cut:
-	$(PYTHON) pipeline/assemble_radio_cut.py
+	$(PYTHON) pipeline/radio_cut.py
 
 radio: narration radio_cut
 

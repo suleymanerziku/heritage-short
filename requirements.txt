@@ -4,3 +4,4 @@ jsonschema
 python-dotenv
 Pillow
 tqdm
+imageio-ffmpeg

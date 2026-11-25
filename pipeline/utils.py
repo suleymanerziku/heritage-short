@@ -300,6 +300,27 @@ def probe_audio_duration(filepath: str) -> float:
         return float(raw_output)
 
     except FileNotFoundError as e:
+        # Fallback 1: Try ffmpeg -i parsing if ffmpeg is available
+        try:
+            import re
+            import shutil
+            ff_bin = shutil.which("ffmpeg")
+            if not ff_bin:
+                try:
+                    import imageio_ffmpeg
+                    ff_bin = imageio_ffmpeg.get_ffmpeg_exe()
+                except Exception:
+                    ff_bin = None
+            if ff_bin:
+                res_ff = subprocess.run([ff_bin, "-i", filepath], capture_output=True, text=True)
+                match = re.search(r"Duration:\s*(\d+):(\d+):([\d\.]+)", res_ff.stderr)
+                if match:
+                    h, m, s = match.groups()
+                    return float(h) * 3600.0 + float(m) * 60.0 + float(s)
+        except Exception:
+            pass
+
+        # Fallback 2: For WAV files, use standard library wave module
         if filepath.lower().endswith(".wav"):
             try:
                 import wave
@@ -310,6 +331,7 @@ def probe_audio_duration(filepath: str) -> float:
                         return float(frames) / float(rate)
             except Exception:
                 pass
+
         raise FileNotFoundError(
             "ffprobe binary not found in system PATH. Ensure ffmpeg/ffprobe is installed."
         ) from e

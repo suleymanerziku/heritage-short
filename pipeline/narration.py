@@ -88,25 +88,21 @@ def call_gemini_tts(
 
     Candidate models:
     - gemini-3.8-flash-tts
-    - gemini-2.5-flash-tts
+    - gemini-3.8-flash-lite-tts
+    - gemini-3.1-flash-tts-preview
+    - gemini-3.8-flash
     - gemini-2.5-flash
-    - gemini-2.0-flash
 
     Returns:
         (raw_audio_bytes, mime_type, model_used)
     """
     candidate_models = [
         "gemini-3.8-flash-tts",
-        "gemini-2.5-flash-tts",
+        "gemini-3.8-flash-lite-tts",
+        "gemini-3.1-flash-tts-preview",
+        "gemini-3.8-flash",
         "gemini-2.5-flash",
-        "gemini-2.0-flash",
     ]
-    system_instruction = (
-        f"You are a professional voiceover narrator. Speak only the user's provided text verbatim "
-        f"in {language} with a {tts_style} style and natural human pacing. "
-        f"Do NOT read instructions, do NOT add introductory or concluding remarks. "
-        f"Output audio only for the exact text given."
-    )
 
     last_error: Optional[str] = None
 
@@ -119,7 +115,6 @@ def call_gemini_tts(
                     model=model,
                     contents=text,
                     config=types.GenerateContentConfig(
-                        system_instruction=system_instruction,
                         response_modalities=["AUDIO"],
                         speech_config=types.SpeechConfig(
                             voice_config=types.VoiceConfig(
@@ -139,16 +134,9 @@ def call_gemini_tts(
             except Exception as sdk_exc:
                 last_error = f"SDK failed for {model}: {sdk_exc}"
 
-        # 2. REST API fallback (with systemInstruction)
+        # 2. REST API execution (Pure text content without instruction wrappers)
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
         payload = {
-            "systemInstruction": {
-                "parts": [
-                    {
-                        "text": system_instruction
-                    }
-                ]
-            },
             "contents": [
                 {
                     "parts": [
@@ -172,13 +160,6 @@ def call_gemini_tts(
 
         try:
             res = requests.post(url, json=payload, headers={"Content-Type": "application/json"}, timeout=45)
-            # If systemInstruction is rejected (e.g. 400 Bad Request on certain models), retry with pure text
-            if res.status_code == 400 and "system" in res.text.lower():
-                fallback_payload = {
-                    "contents": [{"parts": [{"text": text}]}],
-                    "generationConfig": payload["generationConfig"],
-                }
-                res = requests.post(url, json=fallback_payload, headers={"Content-Type": "application/json"}, timeout=45)
 
             if res.status_code == 200:
                 data = res.json()
