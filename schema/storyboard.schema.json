@@ -36,7 +36,10 @@
           "type": "array",
           "items": {
             "type": "string",
-            "enum": ["16:9", "9:16"]
+            "enum": [
+              "16:9",
+              "9:16"
+            ]
           },
           "minItems": 1,
           "uniqueItems": true
@@ -102,6 +105,98 @@
           "type": "string",
           "minLength": 15,
           "description": "End card text explicitly declaring AI-assisted generation and provenance."
+        },
+        "style_block_short": {
+          "type": "string",
+          "minLength": 20,
+          "description": "Compact style string appended after each shot's image_prompt by keyframes.py."
+        },
+        "render_targets": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "note": {
+              "type": "string"
+            },
+            "image_16x9": {
+              "$ref": "#/$defs/size_pair"
+            },
+            "image_9x16": {
+              "$ref": "#/$defs/size_pair"
+            },
+            "video_16x9": {
+              "$ref": "#/$defs/size_pair"
+            },
+            "video_9x16": {
+              "$ref": "#/$defs/size_pair"
+            }
+          }
+        },
+        "character_tokens": {
+          "type": "object",
+          "description": "Short identity strings keyed by character id (matches shots[].characters_in_frame), plus an optional note.",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 3
+          }
+        },
+        "character_sheet_prompts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "seed",
+              "image_prompt"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "seed": {
+                "type": "integer"
+              },
+              "image_prompt": {
+                "type": "string",
+                "minLength": 20
+              }
+            }
+          }
+        },
+        "set_geography": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "props_glossary": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "term",
+              "look"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "term": {
+                "type": "string"
+              },
+              "look": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "negative_prompt_video": {
+          "type": "string"
+        },
+        "generation_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -195,9 +290,115 @@
             "default": 0.4,
             "minimum": 0.0,
             "maximum": 5.0
+          },
+          "camera": {
+            "type": "string"
+          },
+          "characters_in_frame": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "eyeline": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "continuity": {
+            "type": "string"
+          },
+          "foley": {
+            "type": "string"
+          },
+          "video_negative_extra": {
+            "type": "string"
           }
         }
       }
+    },
+    "optional_broll": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "note": {
+          "type": "string"
+        },
+        "shots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "image_prompt",
+              "motion_prompt",
+              "seed"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^broll_[a-z0-9_]+$"
+              },
+              "place_between": {
+                "type": "string"
+              },
+              "image_prompt": {
+                "type": "string",
+                "minLength": 20
+              },
+              "motion_prompt": {
+                "type": "string",
+                "minLength": 10
+              },
+              "seed": {
+                "type": "integer"
+              },
+              "video_mode": {
+                "$ref": "#/$defs/video_mode"
+              },
+              "ken_burns_motion": {
+                "$ref": "#/$defs/ken_burns_motion"
+              }
+            }
+          }
+        }
+      }
+    },
+    "changelog": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "video_mode": {
+      "type": "string",
+      "enum": [
+        "wan22",
+        "ken_burns"
+      ]
+    },
+    "ken_burns_motion": {
+      "type": "string",
+      "enum": [
+        "zoom_in",
+        "zoom_out",
+        "pan_left",
+        "pan_right"
+      ]
+    },
+    "size_pair": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 64
+      },
+      "minItems": 2,
+      "maxItems": 2
     }
   }
 }

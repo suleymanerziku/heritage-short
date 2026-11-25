@@ -1,0 +1,10 @@
+{
+  "input_hash": "0056969ca777",
+  "shot_id": "shot_09",
+  "model": "@cf/black-forest-labs/flux-2-klein-9b",
+  "seed": 42009,
+  "full_prompt": "Wide shot of an adult Ethiopian man in his early 30s, the same boy grown up: warm golden-brown skin, high cheekbones, almond dark eyes, thick eyebrows, short neat coily black hair, heather-grey knit sweater, thin black cord necklace. He sits peacefully at the center of frame by a large rain-streaked window in a modern Addis Ababa apartment, holding a small handleless white sini cup with steam rising, gazing at the rain with a quiet smile. A small black clay jebena sits on the sill beside him. Warm amber lamp light inside contrasts with cool grey rain and blurred green eucalyptus outside, tranquil and contemplative, 35mm anamorphic film look. 35mm anamorphic documentary film look, dim Addis Ababa home interior on a rainy afternoon, crimson charcoal-ember glow against cool grey window light, fresh green grass on the floor, fine film grain, shallow depth of field, photorealistic dark skin tones",
+  "width": 1024,
+  "height": 1024,
+  "latency_s": 18.101
+}

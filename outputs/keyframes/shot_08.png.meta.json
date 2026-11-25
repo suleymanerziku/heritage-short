@@ -1,0 +1,10 @@
+{
+  "input_hash": "681195217cbb",
+  "shot_id": "shot_08",
+  "model": "@cf/black-forest-labs/flux-2-klein-9b",
+  "seed": 42008,
+  "full_prompt": "Close-up of dark steaming Ethiopian coffee pouring in one continuous graceful arc from the long narrow spout of a matte-black round-bottomed clay jebena, held by a woman's dark-brown hand about a foot above a row of small handleless white porcelain sini cups on a low carved wooden rekebot stand. Fresh green ketema grass and tiny yellow daisies around the stand, a small bowl of popcorn at the edge of frame, a curl of incense smoke in the background. Steam rising and catching crimson-golden firelight, soft rain-grey window glow behind, 35mm anamorphic shallow depth of field. 35mm anamorphic documentary film look, dim Addis Ababa home interior on a rainy afternoon, crimson charcoal-ember glow against cool grey window light, fresh green grass on the floor, fine film grain, shallow depth of field, photorealistic dark skin tones",
+  "width": 1024,
+  "height": 1024,
+  "latency_s": 20.346
+}

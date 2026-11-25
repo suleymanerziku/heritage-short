@@ -1,0 +1,10 @@
+{
+  "input_hash": "251e810fb440",
+  "shot_id": "shot_07",
+  "model": "@cf/black-forest-labs/flux-2-klein-9b",
+  "seed": 42007,
+  "full_prompt": "Medium close-up of an Ethiopian mother in her late 40s, rich warm dark-brown skin, neat shuruba cornrows, speaking tenderly with soft wise eyes looking off-camera to the right, white handwoven cotton habesha kemis with a green embroidered neckline and a thin white netela shawl loosely over one shoulder. Crimson-golden ember light from the right sculpts her face; behind her a rain-streaked window with cool grey light, an out-of-focus wooden mortar with an iron pestle on the floor and a woven bowl of popcorn. A thin thread of incense smoke drifts at frame left. Quiet and intimate, 35mm anamorphic film grain, shallow depth of field. 35mm anamorphic documentary film look, dim Addis Ababa home interior on a rainy afternoon, crimson charcoal-ember glow against cool grey window light, fresh green grass on the floor, fine film grain, shallow depth of field, photorealistic dark skin tones",
+  "width": 1024,
+  "height": 1024,
+  "latency_s": 17.717
+}

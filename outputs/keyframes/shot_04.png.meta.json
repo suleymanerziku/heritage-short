@@ -1,0 +1,10 @@
+{
+  "input_hash": "e731981cb969",
+  "shot_id": "shot_04",
+  "model": "@cf/black-forest-labs/flux-2-klein-9b",
+  "seed": 42004,
+  "full_prompt": "Medium two-shot of exactly two people, mother and teenage son, facing each other across a low clay charcoal stove, dim Addis Ababa living room, rainy afternoon. On the left, on a low stool: Ethiopian mother in her late 40s, rich warm dark-brown skin, high cheekbones, almond dark eyes, neat shuruba cornrows, white handwoven cotton habesha kemis with green-and-gold tilet embroidered neckline, calmly roasting pale yellow-green coffee beans in a long-handled black iron pan over crimson embers, stirring with a hooked iron rod, eyes on the pan, thin white smoke rising. On the right, on a wooden barchuma stool: teenage Ethiopian boy, warm golden-brown skin, high cheekbones, almond dark eyes, thick defined eyebrows, tall voluminous coily black hair crown, heather-grey pullover hoodie, thin black cord necklace, leaning forward eagerly, looking left at her. Foreground on green grass: a wooden rekebot tray with a row of small empty handleless white porcelain sini cups beside a black clay jebena with a straw stopper. Rain-streaked window behind her, ember glow on both faces, 35mm anamorphic film grain. 35mm anamorphic documentary film look, dim Addis Ababa home interior on a rainy afternoon, crimson charcoal-ember glow against cool grey window light, fresh green grass on the floor, fine film grain, shallow depth of field, photorealistic dark skin tones",
+  "width": 1024,
+  "height": 1024,
+  "latency_s": 27.561
+}

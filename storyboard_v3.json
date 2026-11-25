@@ -1,0 +1,352 @@
+{
+  "project": {
+    "title": "Heritage Short: The Patience of Buna",
+    "language": "am",
+    "aspect_ratios": [
+      "16:9",
+      "9:16"
+    ],
+    "fps": 24,
+    "render_targets": {
+      "note": "Suggested sizes (multiples of 16). Keep every key subject inside the central 50% of the frame so one still crops cleanly to both 16:9 and 9:16.",
+      "image_16x9": [1344, 768],
+      "image_9x16": [768, 1344],
+      "video_16x9": [1280, 720],
+      "video_9x16": [720, 1280]
+    },
+    "style_block": "Cinematic documentary, 35mm anamorphic film look with fine grain and gentle halation. Dim Addis Ababa family living room on a rainy Kiremt afternoon: warm crimson charcoal-ember uplight against cool blue-grey window light. Floor spread with fresh green ketema grass dotted with small yellow daisies; low wooden barchuma stools; a tall woven straw mesob; a small clay incense burner (etan) with a thin thread of frankincense smoke; a low wooden rekebot cup stand. Coffee set: wide shallow black sheet-iron roasting pan (biret mitad / menkeshkesh) with a long iron handle, resting on a low terracotta charcoal stove (furnello) full of glowing embers; hand-forged black iron hook stirrer; black round-bottomed clay jebena with a bulbous body, long slender neck, side handle and a small twisted-straw stopper; small handleless white porcelain sini cups. Photorealistic dark skin tones, natural skin texture.",
+    "style_block_short": "35mm anamorphic documentary film look, dim Addis Ababa home interior on a rainy afternoon, crimson charcoal-ember glow against cool grey window light, fresh green grass on the floor, fine film grain, shallow depth of field, photorealistic dark skin tones",
+    "character_bible": "Mother (Emaye): Ethiopian woman in her late 40s, rich warm dark-brown skin, high cheekbones, almond-shaped dark eyes, fine smile lines, serene maternal expression. Hair in neat traditional shuruba cornrows. Handwoven white cotton Habesha Kemis, ankle-length with soft draped folds, with a green-and-gold tilet embroidered neckline and matching border at cuffs and hem; a thin white cotton netela shawl occasionally over one shoulder; small gold stud earrings. Son: slender 15-year-old Ethiopian boy, warm golden-brown skin with the same warm undertone as his mother, the same high cheekbones and almond dark eyes, thick defined eyebrows, voluminous textured coily black hair styled upward in a natural crown, casual heather-grey pullover hoodie, thin black cord necklace, patient and eager expression. Adult Son (shot_09 only): the same boy grown up to about 32 - same eyes, eyebrows and smile, short neat coily black hair, light stubble, heather-grey knit sweater echoing the childhood hoodie, same thin black cord necklace.",
+    "character_tokens": {
+      "note": "Short, repeatable identity strings. Paste the matching one into any prompt where the character appears (FLUX.1 schnell reads only 256 tokens).",
+      "mother": "Ethiopian mother in her late 40s, rich warm dark-brown skin, high cheekbones, almond dark eyes, neat shuruba cornrows, white handwoven cotton habesha kemis with green-and-gold tilet embroidered neckline",
+      "son": "15-year-old Ethiopian boy, warm golden-brown skin, high cheekbones, almond dark eyes, thick defined eyebrows, tall voluminous coily black hair crown, heather-grey pullover hoodie, thin black cord necklace",
+      "adult_son": "Ethiopian man in his early 30s, warm golden-brown skin, high cheekbones, almond dark eyes, thick eyebrows, short neat coily black hair, heather-grey knit sweater, thin black cord necklace"
+    },
+    "character_sheet_prompts": [
+      {
+        "id": "sheet_mother",
+        "seed": 41001,
+        "image_prompt": "Character reference sheet on a plain warm-grey studio background: the same Ethiopian woman in her late 40s shown four times side by side - front view, three-quarter view, side profile, and full-body standing view. Rich warm dark-brown skin, high cheekbones, almond dark eyes, serene gentle smile, neat shuruba cornrows, handwoven white cotton habesha kemis with green-and-gold tilet embroidery at neckline, cuffs and hem. Even soft studio light, sharp focus, identical face and outfit in every view, photorealistic."
+      },
+      {
+        "id": "sheet_son",
+        "seed": 41002,
+        "image_prompt": "Character reference sheet on a plain warm-grey studio background: the same slender 15-year-old Ethiopian boy shown four times side by side - front view, three-quarter view, side profile, and full-body standing view. Warm golden-brown skin, high cheekbones, almond dark eyes, thick defined eyebrows, tall voluminous coily black hair in a natural upward crown, heather-grey pullover hoodie, thin black cord necklace. Even soft studio light, sharp focus, identical face and outfit in every view, photorealistic."
+      },
+      {
+        "id": "sheet_adult_son",
+        "seed": 41003,
+        "image_prompt": "Character reference sheet on a plain warm-grey studio background: the same Ethiopian man in his early 30s shown four times side by side - front view, three-quarter view, side profile, and seated view. Warm golden-brown skin, high cheekbones, almond dark eyes, thick eyebrows, short neat coily black hair, light stubble, heather-grey knit sweater, thin black cord necklace. Even soft studio light, sharp focus, identical face and outfit in every view, photorealistic."
+      }
+    ],
+    "set_geography": {
+      "note": "Keep screen direction consistent across all interior shots so the mother and son read as sitting opposite each other (180-degree rule). Shot_04 is the only two-shot and shows this whole layout in one frame.",
+      "layout": "The charcoal stove is at the center of the room. The mother sits on a low stool at screen-LEFT of the stove, with the rain-streaked window directly behind her. The boy sits on a barchuma stool at screen-RIGHT of the stove. The rekebot cup stand, jebena and incense burner are on the grass beside the stove.",
+      "eyelines": "The boy looks screen-LEFT toward his mother and the stove (shot_04). The mother looks screen-RIGHT toward her son (shot_05, shot_07).",
+      "light_direction": "Ember light always comes from the stove at the center of the room: from the left side of frame on the boy, from the right side of frame on the mother. Cool rain-grey light comes from the window behind the mother."
+    },
+    "props_glossary": [
+      {
+        "term": "ketema grass (ቄጠማ)",
+        "look": "Freshly cut, bright green blades spread loosely over the floor, often with small yellow daisies scattered in it."
+      },
+      {
+        "term": "etan (incense) burner",
+        "look": "Small clay or wooden burner with a thin, pale thread of frankincense or myrrh smoke. This smoke is thinner and bluer than the thick white roasting smoke."
+      },
+      {
+        "term": "menkeshkesh / biret mitad (roasting pan)",
+        "look": "Wide, shallow black iron pan with a LONG handle that keeps the hand away from the heat. Beans are shaken or stirred with an iron rod."
+      },
+      {
+        "term": "furnello (charcoal stove)",
+        "look": "Low terracotta stove holding glowing charcoal with a bright crimson-orange core and grey ash on top."
+      },
+      {
+        "term": "jebena (ጀበና)",
+        "look": "Black round-bottomed clay pot, about 25-40 cm tall, bulbous body, long slender neck, small spout, side handle, a small twisted-straw stopper in the neck. Never a conical lid."
+      },
+      {
+        "term": "sini (ስኒ)",
+        "look": "Tiny handleless cups, about the size of an espresso cup, usually white porcelain, set in a row on the rekebot."
+      },
+      {
+        "term": "rekebot",
+        "look": "Low wooden stand or tray that holds the sini cups, set on a bed of grass."
+      },
+      {
+        "term": "mukecha and zenezena",
+        "look": "Heavy wooden mortar bowl and a long blunt wooden or iron pestle, used to grind roasted beans."
+      },
+      {
+        "term": "popcorn and kolo",
+        "look": "Small bowl of popcorn or roasted barley kolo served with the coffee."
+      },
+      {
+        "term": "habesha kemis",
+        "look": "Ankle-length handwoven white cotton dress (shemma ሸማ). Tilet (ጥለት) woven or embroidered borders run along the neckline, cuffs and hem. Often paired with a thin white netela shawl."
+      },
+      {
+        "term": "abol (አቦል) / tona (ቶና) / baraka (በረካ)",
+        "look": "The three rounds of coffee: strongest, weaker, then the 'blessing' round. Shot_08 is abol, the first and darkest pour."
+      }
+    ],
+    "music": {
+      "caption": "Acoustic Ethiopian meditative melody featuring delicate Masenqo and Krar motifs, subtle rain ambient Foley, warm cello swells, slow contemplative pacing.",
+      "bpm": 68,
+      "key": "D minor",
+      "duration_s": 82.0,
+      "seed": 1974,
+      "instrumental": true,
+      "selected_file": "outputs/music/heritage_theme.mp3"
+    },
+    "negative_prompt_video": "blurry, low quality, jpeg artifacts, flicker, morphing or melting faces, distorted hands, extra fingers, extra limbs, duplicate people, warped or melting pan, sudden lighting change, jerky motion, fast camera movement, shaky camera, text, subtitles, watermark, logo, gas stove, electric stove, modern kitchen counter, espresso machine, coffee mug with handle, glass cup",
+    "generation_notes": [
+      "FLUX.1 schnell: use 4 steps, guidance 0, and keep every image_prompt under about 170 words. Its text encoder is capped at 256 tokens and anything past that is silently cut.",
+      "FLUX.1 schnell has no negative prompt. Do not write 'no X' inside an image prompt because it can add X. Use the negative_prompt_video fields with Wan 2.2 only.",
+      "FLUX weighs early tokens more, so each image_prompt opens with shot type and subject, then details, then lighting and style.",
+      "Every image_prompt is self-contained. Do NOT also prepend style_block and character_bible, because that would push the shot text past 256 tokens. If your script prepends anything, use style_block_short and character_tokens instead.",
+      "A fixed seed does not keep a face the same across different prompts. For identity consistency, generate the character_sheet_prompts first and use them as reference images (reference-image or LoRA step), then reuse the exact character_tokens string in every shot.",
+      "Wan 2.2 image-to-video already sees the still, so motion_prompt describes only movement: subject action, camera move, environment, speed. Target about 5 seconds per clip; use ken_burns_motion or a slow-down to cover longer narration.",
+      "To keep an unwanted extra person (for example a small child) out of a FLUX frame, state the exact head-count in the first words of the image_prompt ('exactly two people') and avoid the words 'child' or 'kid' in it; FLUX has no negative prompt to remove them."
+    ],
+    "end_card_text": "Created with AI-assisted generative tools (Gemini Speech, FLUX.1 schnell, Wan 2.2) honoring Ethiopian oral heritage and family cultural memory."
+  },
+  "shots": [
+    {
+      "id": "shot_01",
+      "reason": "Establishes the contemplative mood and rainy Addis Ababa Kiremt setting outside the family home.",
+      "shot_type": "establishing",
+      "narration_text": "በልጅነቴ፣ በአዲስ አበባ የክረምት ዝናብ በቆርቆሮው ጣሪያ ላይ ያለማቋረጥ ሲዘንብ፣ ቤታችን በልዩ ሙቀት ይሞላል።",
+      "subtitle_en": "In childhood, when Kiremt rain drummed on the roof, our home filled with warmth.",
+      "tts_style": "warm, contemplative, nostalgic",
+      "tts_voice": "Puck",
+      "image_prompt": "Wide establishing shot of a modest Addis Ababa family home in heavy Kiremt rain: a low house with a rust-streaked corrugated iron roof, rainwater streaming off the eaves in silver strings, a green-painted wooden doorway at dead center glowing warm amber with a thin curl of pale smoke drifting out. Wet red-brown earth lane with puddles reflecting the amber light, tall eucalyptus trees and misty green hills fading into low grey cloud behind. Cool blue-grey overcast light outside, warm firelit glow inside the doorway, no people, 35mm anamorphic documentary film look, fine film grain, quiet and moody.",
+      "motion_prompt": "Rain falls steadily and streams off the tin eaves in silver strings, puddles ripple, a thin curl of pale smoke drifts out of the glowing doorway and the amber light flickers softly. The camera makes a slow, smooth tilt down from the wet roof edge to the doorway, then eases forward slightly. Gentle contemplative pace, natural motion, stable framing.",
+      "camera": "24mm anamorphic, eye level, tripod, deep focus",
+      "characters_in_frame": [],
+      "eyeline": null,
+      "continuity": "This is the only exterior. The doorway glow is the same amber as the ember light inside, so the cut to shot_02 feels like walking through the door.",
+      "foley": "steady rain on corrugated iron, water dripping from eaves, distant low thunder",
+      "video_negative_extra": "people walking, cars, umbrellas, text on signs",
+      "seed": 42001,
+      "video_mode": "wan22",
+      "ken_burns_motion": "zoom_in",
+      "pad_after_s": 0.4
+    },
+    {
+      "id": "shot_02",
+      "reason": "Introduces the mother preparing the ceremonial space with traditional green grass and clay stove.",
+      "shot_type": "medium",
+      "narration_text": "እማዬ ሁልጊዜ ከሰዓት በኋላ ለምለም የቄጠማ ሣር ወለሉ ላይ ጎዝጉዛ፣ በትንሹ የሸክላ ምድጃ ከሰሉን ታቀጣጥላለች።",
+      "subtitle_en": "Mother spreads fresh green grass and kindles charcoal in the clay stove.",
+      "tts_style": "gentle, reverent, affectionate",
+      "tts_voice": "Puck",
+      "image_prompt": "Medium shot inside a dim Addis Ababa living room on a rainy afternoon: an Ethiopian mother in her late 40s, rich warm dark-brown skin, neat shuruba cornrows, white handwoven cotton habesha kemis with green-and-gold tilet neckline, kneeling and spreading fresh green ketema grass across the floor, a few small yellow daisies scattered in it, serene face looking down at her work. At center beside her, a low terracotta charcoal stove glows with crimson embers; a black round-bottomed clay jebena with a long neck and a small clay incense burner with a thin trail of smoke sit nearby. Warm ember light on her face, cool grey rain light from a window behind, 35mm anamorphic documentary look, shallow depth of field.",
+      "motion_prompt": "The mother gently scatters handfuls of fresh grass with both hands and smooths it across the floor, then reaches toward the stove; the embers pulse brighter and dim, the incense smoke curls up slowly, soft rain light flickers on the window behind her. The camera makes a slow, subtle push-in toward her hands and the stove. Calm, unhurried pace, natural hand movement.",
+      "camera": "35mm anamorphic, eye level slightly low, f/2",
+      "characters_in_frame": ["mother"],
+      "eyeline": "Looks down at the grass and the stove",
+      "continuity": "Sets the room: the mother at screen-left, the stove at center, the window behind her. The jebena and incense burner stay on the grass to the right of the stove for the rest of the film.",
+      "foley": "grass rustle, soft charcoal crackle, rain on the roof",
+      "video_negative_extra": "second person, boy in frame, gas lighter, matches flaring",
+      "seed": 42002,
+      "video_mode": "wan22",
+      "ken_burns_motion": "zoom_in",
+      "pad_after_s": 0.4
+    },
+    {
+      "id": "shot_03",
+      "reason": "Focuses on raw green coffee beans entering the black iron pan, initiating the transformation ritual.",
+      "shot_type": "insert",
+      "narration_text": "ጥሬ የቡና ፍሬዎች በጠቆረው የብረት ምጣድ ላይ ሲቀመጡ፣ የዕለቱ የቡና ሥነ-ሥርዓት በይፋ ይጀምራል።",
+      "subtitle_en": "Raw coffee beans placed on the black iron pan begin the sacred ceremony.",
+      "tts_style": "deliberate, focused, rhythmic",
+      "tts_voice": "Puck",
+      "image_prompt": "Overhead insert shot looking straight down into a wide, shallow black sheet-iron roasting pan with a long iron handle reaching to the lower left, holding a single layer of pale-green unroasted Ethiopian coffee beans, set over glowing crimson-orange charcoal embers in a low terracotta stove. At the top edge of frame a woman's dark-brown hands tilt a small straw tray so the last beans slide into the pan. Fresh green ketema grass and tiny yellow daisies softly blurred around the stove, warm firelight on the beans, faint heat shimmer, 35mm anamorphic macro, shallow depth of field, rich ember contrast.",
+      "motion_prompt": "The last green beans slide off the straw tray into the pan with a soft clatter and settle; the beans shift slightly as the pan warms, a few pale chaff flakes lift and drift, heat shimmer ripples above the embers. The camera holds a steady overhead macro with a very slow drift to the left. Calm, deliberate pace.",
+      "camera": "50mm macro, top-down 90 degrees, locked off with a slow lateral drift",
+      "characters_in_frame": ["mother (hands only)"],
+      "eyeline": null,
+      "continuity": "Beans are still PALE GREEN here. This is the lightest roast level in the film.",
+      "foley": "beans clattering into iron, faint hiss of heat, charcoal ticks",
+      "video_negative_extra": "face, extra hands, beans changing color too fast, flames",
+      "seed": 42003,
+      "video_mode": "wan22",
+      "ken_burns_motion": "pan_left",
+      "pad_after_s": 0.4
+    },
+    {
+      "id": "shot_04",
+      "reason": "Captures the child's youthful impatience and longing for the roasted aroma and first brew.",
+      "shot_type": "medium",
+      "narration_text": "እኔ በህፃንነቴ ትዕግሥት በማጣት 'እማዬ ፍጠኚ፣ ቶሎ አፍዪልኝ' እያልኩ ቡናው እስኪደርስ እጨቀጭቃት ነበር።",
+      "subtitle_en": "As an impatient child, I would beg her: 'Hurry Mama, brew it quickly!'",
+      "tts_style": "playful, nostalgic, youthful",
+      "tts_voice": "Puck",
+      "image_prompt": "Medium two-shot of exactly two people, mother and teenage son, facing each other across a low clay charcoal stove, dim Addis Ababa living room, rainy afternoon. On the left, on a low stool: Ethiopian mother in her late 40s, rich warm dark-brown skin, high cheekbones, almond dark eyes, neat shuruba cornrows, white handwoven cotton habesha kemis with green-and-gold tilet embroidered neckline, calmly roasting pale yellow-green coffee beans in a long-handled black iron pan over crimson embers, stirring with a hooked iron rod, eyes on the pan, thin white smoke rising. On the right, on a wooden barchuma stool: teenage Ethiopian boy, warm golden-brown skin, high cheekbones, almond dark eyes, thick defined eyebrows, tall voluminous coily black hair crown, heather-grey pullover hoodie, thin black cord necklace, leaning forward eagerly, looking left at her. Foreground on green grass: a wooden rekebot tray with a row of small empty handleless white porcelain sini cups beside a black clay jebena with a straw stopper. Rain-streaked window behind her, ember glow on both faces, 35mm anamorphic film grain.",
+      "motion_prompt": "The mother slowly stirs the beans in lazy circles with the hooked iron rod and gives the pan a gentle shake by its long handle, the pale beans tumbling and thin white smoke curling upward; she keeps her eyes on the pan with a faint, patient smile. Across the stove the boy leans further forward on his stool, glances from the pan up to his mother and back, shifts restlessly and lets out a small impatient breath, mouth mostly closed. Embers pulse softly, rain trickles down the window behind her, the empty cups in the foreground stay still. The camera makes a slow, subtle push-in toward the stove between them, stable framing. Calm, natural pace.",
+      "camera": "35mm anamorphic, seated eye level (low), medium two-shot, f/2.8 so both faces hold focus, slow subtle push-in",
+      "characters_in_frame": ["mother", "son"],
+      "eyeline": "Boy looks screen-LEFT toward his mother and the pan. Mother looks down at the pan and does not answer his look yet; she answers him with a smile in shot_05.",
+      "continuity": "The film's only two-shot: it shows the full set_geography (mother screen-left with the window behind her, stove at center, boy screen-right). Exactly two people, the 15-year-old son only, with no younger child anywhere in frame. Beans are pale yellow-green with only thin smoke, between shot_03 (green) and shot_05 (golden-tan, thick smoke). Sini cups are EMPTY and upright on the rekebot in the foreground; the jebena (straw stopper, no lid) sits with them, right of the stove as set in shot_02. No netela yet (it first appears in shot_07). Hoodie and necklace match shot_09's sweater and necklace. Ember light hits the mother from frame-right and the boy from frame-left. For 9:16, keep both faces near the center of frame or generate a separate 768x1344 keyframe with the same prompt rather than cropping the 16:9 still.",
+      "foley": "slow iron rod scrape on the pan, first faint bean ticks, charcoal crackle, cloth rustle and a small impatient exhale from the boy, rain on the roof",
+      "video_negative_extra": "small child, toddler, third person, extra people, adult man, people in the background, looking into the camera, talking mouth, exaggerated expression, laughing, coffee in the cups, steam from the cups, spilled beans, flames leaping, beans darkening quickly",
+      "seed": 42004,
+      "video_mode": "wan22",
+      "ken_burns_motion": "zoom_in",
+      "pad_after_s": 0.4
+    },
+    {
+      "id": "shot_05",
+      "reason": "Demonstrates maternal tranquility and sensory grace as aromatic coffee smoke begins to swirl.",
+      "shot_type": "close_up",
+      "narration_text": "እሷ ግን በፈገግታ እያየችኝ፣ የብረት ማንኪያውን በምጣዱ ላይ እያዟዟረች፣ የቡናው መዓዛ ክፍል ውስጥ እንዲናኝ ታደርጋለች።",
+      "subtitle_en": "She would only smile, stirring the pan as fragrant white smoke filled the room.",
+      "tts_style": "calm, soothing, graceful",
+      "tts_voice": "Puck",
+      "image_prompt": "Close-up of an Ethiopian mother in her late 40s seated on a low stool, rich warm dark-brown skin, neat shuruba cornrows, a serene smile, eyes glancing warmly off-camera to the right toward her son, white handwoven cotton habesha kemis with green tilet embroidery draped softly across her lap. Her right hand stirs roasting coffee beans, golden-tan mixed with dark brown, in a wide shallow black iron pan with a long handle, using a slender hand-forged black iron rod with a curved hook end. The pan rests on a low terracotta charcoal stove with bright crimson embers; a black clay jebena with a small straw stopper sits beside it on fresh green grass. Thick wisps of fragrant white smoke curl past her face, warm golden firelight, 35mm anamorphic documentary look.",
+      "motion_prompt": "She slowly stirs the beans in a lazy circle with the iron hook rod, the beans tumbling and glistening; her smile warms and she gives a small affectionate nod toward her son off-screen. Thick white smoke curls up past her face and drifts across the lens, embers pulse softly. Slow-motion feel, gentle slow push-in with a slight drift. Calm, soothing pace.",
+      "camera": "50mm anamorphic, eye level, shallow depth of field",
+      "characters_in_frame": ["mother"],
+      "eyeline": "Screen-RIGHT, toward her son (answers the eyeline of shot_04)",
+      "continuity": "Beans are golden-tan and brown here, mid-roast, darker than shot_03. The jebena has a straw stopper, not a lid. Ember light comes from below and to the right of her.",
+      "foley": "iron rod scraping the pan, soft bean pops beginning, hiss of smoke, rain",
+      "video_negative_extra": "boy in frame, mother looking into the camera, spilled beans, fire flames leaping",
+      "seed": 42005,
+      "video_mode": "wan22",
+      "ken_burns_motion": "zoom_in",
+      "pad_after_s": 0.4
+    },
+    {
+      "id": "shot_06",
+      "reason": "Highlights the acoustic crackle and color transition of the beans as emotional calming agent.",
+      "shot_type": "insert",
+      "narration_text": "ፍሬዎቹ ከቢጫ ወደ ጥቁር ቡናማ ሲቀየሩና ሲፈነዱ የሚሰማው ድምፅ፣ የልቤን የናፍቆት ምት ያረጋጋው ነበር።",
+      "subtitle_en": "As beans turned golden brown and popped, their crackle calmed my restless heart.",
+      "tts_style": "intimate, sensory, peaceful",
+      "tts_voice": "Puck",
+      "image_prompt": "High-angle macro insert looking down into a wide, shallow black iron roasting pan over intensely glowing crimson charcoal embers in a clay stove. A mound of glossy, oil-sheened Ethiopian coffee beans ranges from amber-gold to deep chocolate brown with a few charred mahogany ones. A slender hand-forged black iron hook stirrer cuts diagonally in from the left through the beans. Delicate translucent ribbons of white aromatic smoke rise toward the lens, a few paper-thin silver chaff flakes glowing like sparks. Fresh green grass softly blurred at the bottom right, 35mm anamorphic macro, crisp ember contrast, shallow depth of field.",
+      "motion_prompt": "Beans pop and jump slightly, tumbling over one another as the hook rod turns them; thin ribbons of white smoke rise and drift past the lens, ember glow pulses beneath the pan. The camera makes an extremely slow pan from left to right across the beans. Slow, sensory, calm pace.",
+      "camera": "100mm macro, high angle about 70 degrees, extremely slow pan",
+      "characters_in_frame": [],
+      "eyeline": null,
+      "continuity": "Darkest roast of the film: amber to deep brown with a few charred beans. The hook stirrer enters from the left, as in shot_05.",
+      "foley": "popping and crackling beans (the key sound of this shot), iron scrape, soft hiss, rain far behind",
+      "video_negative_extra": "face, hands in frame, flames, beans turning black, smoke covering the whole frame",
+      "seed": 42006,
+      "video_mode": "wan22",
+      "ken_burns_motion": "pan_right",
+      "pad_after_s": 0.4
+    },
+    {
+      "id": "shot_07",
+      "reason": "The philosophical apex of the film: mother delivers the proverb teaching life-long patience.",
+      "shot_type": "medium_close_up",
+      "narration_text": "እማዬም ቀስ ብላ... 'ልጄ ሆይ፣ ቀስ በቀስ እንቁላል በእግሩ ይሄዳል'... መቻኮል ቡናንም ሆነ ሕይወትን ያበላሻል።",
+      "subtitle_en": "She said: 'Slowly, an egg learns to walk; rushing ruins both coffee and life.'",
+      "tts_style": "profound, gentle, maternal wisdom",
+      "tts_voice": "Puck",
+      "image_prompt": "Medium close-up of an Ethiopian mother in her late 40s, rich warm dark-brown skin, neat shuruba cornrows, speaking tenderly with soft wise eyes looking off-camera to the right, white handwoven cotton habesha kemis with a green embroidered neckline and a thin white netela shawl loosely over one shoulder. Crimson-golden ember light from the right sculpts her face; behind her a rain-streaked window with cool grey light, an out-of-focus wooden mortar with an iron pestle on the floor and a woven bowl of popcorn. A thin thread of incense smoke drifts at frame left. Quiet and intimate, 35mm anamorphic film grain, shallow depth of field.",
+      "motion_prompt": "She speaks slowly and tenderly, lips moving softly, with a gentle blink, a slight tilt of her head and a knowing warm smile at the end; ember light flickers across her face, raindrops trace slow paths down the window glass behind her, incense smoke drifts. The camera makes a slow, steady cinematic push-in toward her eyes. Calm, reassuring pace, subtle natural expression.",
+      "camera": "85mm anamorphic, eye level, shallow depth of field, slow push-in",
+      "characters_in_frame": ["mother"],
+      "eyeline": "Screen-RIGHT, toward her son",
+      "continuity": "Window sits behind her. The mukecha and popcorn bowl are quiet set-dressing: the grinding and brewing happen between shot_06 and shot_08 but the narration skips them. Same dress and shuruba as before; netela is new and stays on for shot_08.",
+      "foley": "very soft room tone, rain on the window glass, faint charcoal tick, no music hit on the proverb",
+      "video_negative_extra": "exaggerated mouth movement, talking fast, looking into camera, second person",
+      "seed": 42007,
+      "video_mode": "wan22",
+      "ken_burns_motion": "zoom_in",
+      "pad_after_s": 1.0
+    },
+    {
+      "id": "shot_08",
+      "reason": "The ritual payoff: pouring the finished first brew into the delicate cini cup.",
+      "shot_type": "close_up",
+      "narration_text": "ከጥቁሩ ጀበና የሚፈሰው የመጀመሪያው የአቦል ቡና ሲኒውን ሲሞላ፣ የትዕግሥት ውጤት ምን ያህል ጣፋጭ እንደሆነ ገባኝ።",
+      "subtitle_en": "As abol poured from the clay jebena, I tasted the sweetness of patience.",
+      "tts_style": "fulfilled, warm, reverent",
+      "tts_voice": "Puck",
+      "image_prompt": "Close-up of dark steaming Ethiopian coffee pouring in one continuous graceful arc from the long narrow spout of a matte-black round-bottomed clay jebena, held by a woman's dark-brown hand about a foot above a row of small handleless white porcelain sini cups on a low carved wooden rekebot stand. Fresh green ketema grass and tiny yellow daisies around the stand, a small bowl of popcorn at the edge of frame, a curl of incense smoke in the background. Steam rising and catching crimson-golden firelight, soft rain-grey window glow behind, 35mm anamorphic shallow depth of field.",
+      "motion_prompt": "A thin dark stream of coffee pours steadily from the spout into the first cup as it fills, steam rising and curling in the firelight; the hand holding the jebena keeps its height and glides slowly along the row of cups. The camera makes a smooth steady tracking move following the stream with a slight lateral drift. Ember light shimmers on the coffee surface. Smooth, graceful pace.",
+      "camera": "85mm anamorphic, slightly low angle, shallow depth of field, smooth lateral track",
+      "characters_in_frame": ["mother (hand only)"],
+      "eyeline": null,
+      "continuity": "Pour from about 30 cm (one foot) above the cups, unbroken, as in the real ritual. Cups are handleless. Abol is the strongest, darkest round.",
+      "foley": "thin liquid stream into porcelain, soft clink, steam hiss, quiet rain",
+      "video_negative_extra": "coffee mug with handle, glass cup, overflowing coffee, splashing, face in frame",
+      "seed": 42008,
+      "video_mode": "wan22",
+      "ken_burns_motion": "zoom_out",
+      "pad_after_s": 0.4
+    },
+    {
+      "id": "shot_09",
+      "reason": "Resolution and adult reflection: the sensory memory and maternal lesson remain a lifelong anchor.",
+      "shot_type": "wide",
+      "narration_text": "ዛሬም በሩጫ የተሞላው ዓለም ሲያስጨንቀኝ፣ የእማዬን ድምፅና ያንን ፀጥተኛ የቡና ጠረን አስታውሳለሁ።",
+      "subtitle_en": "Years later in a rushed world, I still hear her voice and remember not to hurry.",
+      "tts_style": "reflective, deeply grateful, tranquil",
+      "tts_voice": "Puck",
+      "image_prompt": "Wide shot of an adult Ethiopian man in his early 30s, the same boy grown up: warm golden-brown skin, high cheekbones, almond dark eyes, thick eyebrows, short neat coily black hair, heather-grey knit sweater, thin black cord necklace. He sits peacefully at the center of frame by a large rain-streaked window in a modern Addis Ababa apartment, holding a small handleless white sini cup with steam rising, gazing at the rain with a quiet smile. A small black clay jebena sits on the sill beside him. Warm amber lamp light inside contrasts with cool grey rain and blurred green eucalyptus outside, tranquil and contemplative, 35mm anamorphic film look.",
+      "motion_prompt": "The man slowly lifts the cup, inhales the steam with his eyes closing, and a faint smile settles; steam curls from the cup, raindrops run down the window glass, the warm lamp light flickers very slightly. The camera makes a slow cinematic pull-back revealing more of the rain-streaked window and the room. Serene, unhurried pace.",
+      "camera": "35mm anamorphic, eye level, deep-ish focus, slow pull-back",
+      "characters_in_frame": ["adult_son"],
+      "eyeline": "Looking out of the window toward screen-left, then down into the cup",
+      "continuity": "Must read as the same person as the boy in shot_04: same eyes, eyebrows, skin tone, thin black cord necklace, grey knit echoing the grey hoodie. The sini cup and the small jebena on the sill rhyme with shot_08. Rain returns, the same rain as shot_01.",
+      "foley": "rain on the window, soft room tone, warm cello swell, a single quiet sip",
+      "video_negative_extra": "second person, wife or child, modern coffee mug with handle, phone in hand, crying",
+      "seed": 42009,
+      "video_mode": "wan22",
+      "ken_burns_motion": "zoom_out",
+      "pad_after_s": 3.0
+    }
+  ],
+  "optional_broll": {
+    "note": "NOT part of the story. These are optional cutaways to cover the grinding, brewing and aroma-sharing steps the narration skips. Use only if you want a longer cut, or to cover narration that runs longer than 5 seconds.",
+    "shots": [
+      {
+        "id": "broll_a_grind",
+        "place_between": "shot_06 and shot_07",
+        "image_prompt": "Close-up of an Ethiopian mother's dark-brown hands pounding freshly roasted dark coffee beans in a heavy wooden mukecha mortar with a long blunt iron zenezena pestle, on fresh green ketema grass. Her white habesha kemis sleeve with green tilet cuff is visible. Warm crimson ember glow from the right, a thin thread of incense smoke behind, 35mm anamorphic macro, shallow depth of field.",
+        "motion_prompt": "The pestle rises and falls in a slow, steady rhythmic motion, coarse dark grounds shifting in the bowl; ember light flickers. Camera holds nearly still with a slight slow push-in. Rhythmic, calm pace.",
+        "seed": 42101,
+        "video_mode": "wan22",
+        "ken_burns_motion": "zoom_in"
+      },
+      {
+        "id": "broll_b_aroma",
+        "place_between": "shot_05 and shot_06",
+        "image_prompt": "Point-of-view shot from a boy's seat at floor level: an Ethiopian mother in her late 40s, neat shuruba cornrows, white habesha kemis, leans toward the camera holding a long-handled black iron pan of freshly roasted dark beans, gently offering the aromatic smoke, a warm loving smile. Crimson ember glow, thick white smoke drifting toward the lens, green grass on the floor, 35mm anamorphic film look, shallow depth of field.",
+        "motion_prompt": "She slowly sways the pan toward the camera, smoke drifting across the lens, her smile soft and affectionate; ember light flickers. Camera barely moves, a slight breathing drift. Warm, slow pace.",
+        "seed": 42102,
+        "video_mode": "wan22",
+        "ken_burns_motion": "zoom_in"
+      },
+      {
+        "id": "broll_c_boil",
+        "place_between": "shot_07 and shot_08",
+        "image_prompt": "Close-up of a matte-black round-bottomed clay jebena with a long neck and a small twisted-straw stopper sitting on a low terracotta charcoal stove with glowing crimson embers, steam escaping around the stopper, fresh green grass at the edges, a rain-streaked window softly blurred behind, 35mm anamorphic shallow depth of field.",
+        "motion_prompt": "Steam curls steadily from the neck of the jebena, embers pulse beneath it, rain light flickers on the blurred window. Camera makes a slow, gentle push-in. Calm, patient pace.",
+        "seed": 42103,
+        "video_mode": "wan22",
+        "ken_burns_motion": "zoom_in"
+      }
+    ]
+  },
+  "changelog": [
+    "Story preserved: all narration_text, subtitle_en, reason, shot_type, tts fields, seeds, video_mode, ken_burns_motion and pad_after_s are unchanged.",
+    "Roasting pan now has a long handle (the real menkeshkesh) and shot_03 shows hands tipping beans in, matching the narration.",
+    "Jebena fixed: bulbous body, long neck and a small straw stopper instead of a conical lid.",
+    "Added ceremony details: incense burner (etan), yellow daisies in the grass, rekebot cup stand, sini cups, popcorn bowl, mukecha and zenezena in the background, netela shawl.",
+    "Shot_08 pour now specifies the real technique: unbroken stream from about a foot above a row of cups.",
+    "Eyelines and set geography are fixed so shot_04 (boy looks left) answers shot_05 and shot_07 (mother looks right).",
+    "Mother and son now share a warm undertone, cheekbones and almond eyes so they read as family; adult son in shot_09 is tied to the boy by the grey sweater and the black cord necklace.",
+    "Image prompts rewritten to be self-contained and under FLUX.1 schnell's 256-token limit; 'no X' phrases moved out of the image prompts into negative_prompt_video, which Wan 2.2 supports.",
+    "Motion prompts rewritten in Wan 2.2 form: subject action, camera move, environment, pace.",
+    "Added per shot: camera, characters_in_frame, eyeline, continuity, foley, video_negative_extra. Added project-level character_tokens, character_sheet_prompts, set_geography, props_glossary, render_targets, generation_notes and optional_broll.",
+    "v3 - shot_04 reframed from a solo portrait of the boy into a medium two-shot. The first keyframe (old prompt said 'young Ethiopian child leaning against a stool') drew a small child in front of the mother, left the pan unattended and showed no cups. Now, following the two reference photos: the mother sits screen-left beside the stove actively roasting pale beans in the long-handled pan, the 15-year-old son sits screen-right leaning in, and a rekebot with a row of empty white sini cups and the jebena sits in the foreground. Updated image_prompt, motion_prompt, camera, characters_in_frame, eyeline, continuity, foley and video_negative_extra; shot_type changed from medium_close_up to medium to match the new framing. Narration, subtitle, reason, tts, seed, video_mode, ken_burns_motion and pad_after_s are untouched. Also added a head-count tip to generation_notes and a two-shot note to set_geography."
+  ]
+}
