@@ -64,7 +64,17 @@ NVIDIA_MODEL_MAP: Dict[str, str] = {
     "nvidia-flux1-dev": "black-forest-labs/flux.1-dev",
 }
 
-MODEL_MAP: Dict[str, str] = {**CF_MODEL_MAP, **NVIDIA_MODEL_MAP}
+# Gemini model catalog mapping
+GEMINI_MODEL_MAP: Dict[str, str] = {
+    "gemini-3.1-flash-lite-image": "gemini-3.1-flash-lite-image",
+    "gemini-3.1-flash-image": "gemini-3.1-flash-image",
+    "gemini-3.1-flash-image-preview": "gemini-3.1-flash-image-preview",
+    "gemini-2.5-flash-image": "gemini-2.5-flash-image",
+    "gemini-3-pro-image-preview": "gemini-3-pro-image-preview",
+    "imagen3": "imagen-3.0-generate-002",
+}
+
+MODEL_MAP: Dict[str, str] = {**CF_MODEL_MAP, **NVIDIA_MODEL_MAP, **GEMINI_MODEL_MAP}
 
 
 def get_cf_credentials() -> Tuple[str, str]:
@@ -86,6 +96,77 @@ def get_nvidia_api_key() -> str:
     if not api_key:
         raise ValueError("Missing NVIDIA API Key: Set NVIDIA_API_KEY in .env")
     return api_key
+
+
+def get_gemini_api_key() -> str:
+    """Retrieves Gemini API key from environment variables."""
+    key = os.getenv("GEMINI_API_KEY")
+    if not key:
+        raise ValueError("Missing Gemini API Key: Set GEMINI_API_KEY in .env")
+    return key
+
+
+def call_gemini_image(
+    api_key: str,
+    model_alias: str,
+    prompt: str,
+    seed: Optional[int] = None,
+    width: int = 1024,
+    height: int = 1024,
+    timeout: int = 90,
+) -> bytes:
+    """Calls Gemini REST API for text-to-image generation.
+
+    Supports:
+    - imagen3: imagen-3.0-generate-002 (:predict endpoint)
+    - gemini-3.1-flash-lite-image, gemini-3.1-flash-image, gemini-2.5-flash-image (:generateContent endpoint)
+    """
+    model_name = GEMINI_MODEL_MAP.get(model_alias, model_alias)
+
+    # 1. Imagen 3 predict endpoint
+    if "imagen" in model_name:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:predict?key={api_key}"
+        payload: Dict[str, Any] = {
+            "instances": [{"prompt": prompt}],
+            "parameters": {
+                "sampleCount": 1,
+                "aspectRatio": "1:1",
+                "outputOptions": {"mimeType": "image/png"},
+            },
+        }
+        res = requests.post(url, json=payload, timeout=timeout)
+        if res.status_code != 200:
+            raise RuntimeError(f"Gemini Imagen API returned HTTP {res.status_code}: {res.text}")
+        data = res.json()
+        predictions = data.get("predictions", [])
+        if predictions and "bytesBase64Encoded" in predictions[0]:
+            return base64.b64decode(predictions[0]["bytesBase64Encoded"])
+        raise ValueError(f"Unrecognized response structure from Imagen API: {data}")
+
+    # 2. Gemini Multimodal generateContent endpoint
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
+    payload = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {
+            "responseModalities": ["IMAGE"],
+        },
+    }
+    if seed is not None:
+        payload["generationConfig"]["seed"] = seed
+
+    res = requests.post(url, json=payload, timeout=timeout)
+    if res.status_code != 200:
+        raise RuntimeError(f"Gemini API returned HTTP {res.status_code} for {model_name}: {res.text}")
+
+    data = res.json()
+    candidates = data.get("candidates", [])
+    if candidates:
+        parts = candidates[0].get("content", {}).get("parts", [])
+        for part in parts:
+            if "inlineData" in part and "data" in part["inlineData"]:
+                return base64.b64decode(part["inlineData"]["data"])
+
+    raise ValueError(f"No inline image data found in Gemini response: {data}")
 
 
 def call_nvidia_flux(
@@ -225,6 +306,7 @@ def generate_single_keyframe(
     output_path: str,
     cf_credentials: Optional[Tuple[str, str]] = None,
     nvidia_key: Optional[str] = None,
+    gemini_key: Optional[str] = None,
     width: int = 1024,
     height: int = 1024,
 ) -> bool:
@@ -253,7 +335,18 @@ def generate_single_keyframe(
     start_time = time.time()
 
     def _call() -> bytes:
-        if model_alias in NVIDIA_MODEL_MAP:
+        if model_alias in GEMINI_MODEL_MAP:
+            if not gemini_key:
+                raise ValueError("Gemini API key required for this model")
+            return call_gemini_image(
+                api_key=gemini_key,
+                model_alias=model_alias,
+                prompt=full_prompt,
+                seed=seed,
+                width=width,
+                height=height,
+            )
+        elif model_alias in NVIDIA_MODEL_MAP:
             if not nvidia_key:
                 raise ValueError("NVIDIA API key required for this model")
             return call_nvidia_flux(
@@ -343,14 +436,15 @@ def run_reference_sheet(
     model_alias: str,
     cf_credentials: Optional[Tuple[str, str]] = None,
     nvidia_key: Optional[str] = None,
+    gemini_key: Optional[str] = None,
 ) -> None:
     """Generates 4 candidate character & style reference images for consistency benchmarking."""
     project = storyboard.get("project", {})
-    style_block = project.get("style_block", "")
+    style_short = project.get("style_block_short", "")
     character_bible = project.get("character_bible", "")
 
     ref_prompt = (
-        f"{character_bible}, {style_block}, "
+        f"{character_bible}, {style_short}, "
         f"character reference sheet, front and three-quarter view, consistent lighting"
     )
 
@@ -374,6 +468,7 @@ def run_reference_sheet(
             output_path=output_path,
             cf_credentials=cf_credentials,
             nvidia_key=nvidia_key,
+            gemini_key=gemini_key,
         )
 
     print("================================================================================")
@@ -383,7 +478,30 @@ def run_reference_sheet(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate keyframes via Cloudflare Workers AI or NVIDIA NIM.")
+    all_model_aliases = list(MODEL_MAP.keys())
+    parser = argparse.ArgumentParser(
+        description="Generate keyframes via Cloudflare Workers AI, NVIDIA NIM, or Google Gemini.",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog=f"""
+Model aliases:
+  Cloudflare (CF_ACCOUNT_ID + CF_API_TOKEN):
+    flux2                    @cf/black-forest-labs/flux-2-klein-4b
+    flux9b                   @cf/black-forest-labs/flux-2-klein-9b
+    flux1                    @cf/black-forest-labs/flux-1-schnell
+
+  NVIDIA NIM (NVIDIA_API_KEY):
+    nvidia-flux3             black-forest-labs/flux-3-image-klein
+    nvidia-flux1-dev         black-forest-labs/flux.1-dev
+
+  Google Gemini (GEMINI_API_KEY):
+    gemini-3.1-flash-lite-image   Fast, quota-efficient lite model
+    gemini-3.1-flash-image        Standard flash image model
+    gemini-3.1-flash-image-preview Preview channel flash image model
+    gemini-2.5-flash-image        High-quality flash image model
+    gemini-3-pro-image-preview    Pro-tier image preview model
+    imagen3                       imagen-3.0-generate-002 (highest quality)
+""",
+    )
     parser.add_argument(
         "--storyboard",
         default="storyboard.json",
@@ -391,9 +509,9 @@ def main() -> None:
     )
     parser.add_argument(
         "--model",
-        choices=["flux1", "flux2", "flux9b", "nvidia-flux3", "nvidia-flux1-dev"],
+        choices=all_model_aliases,
         default="nvidia-flux3",
-        help="Model alias to use (default: nvidia-flux3 / FLUX 3 Image Klein)",
+        help="Model alias to use. See list below. (default: nvidia-flux3)",
     )
     parser.add_argument(
         "--shot",
@@ -426,11 +544,17 @@ def main() -> None:
 
     cf_credentials: Optional[Tuple[str, str]] = None
     nvidia_key: Optional[str] = None
+    gemini_key: Optional[str] = None
 
-    if args.model in NVIDIA_MODEL_MAP:
+    if args.model in GEMINI_MODEL_MAP:
+        gemini_key = get_gemini_api_key()
+        print(f"[*] Using Gemini backend: {GEMINI_MODEL_MAP[args.model]}")
+    elif args.model in NVIDIA_MODEL_MAP:
         nvidia_key = get_nvidia_api_key()
+        print(f"[*] Using NVIDIA NIM backend: {NVIDIA_MODEL_MAP[args.model]}")
     else:
         cf_credentials = get_cf_credentials()
+        print(f"[*] Using Cloudflare Workers AI backend: {CF_MODEL_MAP[args.model]}")
 
     # 2. Ref-sheet mode
     if args.ref_sheet:
@@ -439,6 +563,7 @@ def main() -> None:
             model_alias=args.model,
             cf_credentials=cf_credentials,
             nvidia_key=nvidia_key,
+            gemini_key=gemini_key,
         )
         return
 
@@ -464,11 +589,6 @@ def main() -> None:
     for shot in shots:
         shot_id = shot["id"]
         seed = shot.get("seed", 42000)
-        # Deterministic prompt composition: the shot's self-contained image_prompt first
-        # (FLUX weighs early tokens most), then the compact style_block_short.
-        # The long style_block + character_bible are no longer prepended: they pushed the
-        # shot text past the text-encoder limit and described characters who are not in
-        # the shot (e.g. the adult son leaking into shot_04).
         image_prompt = shot["image_prompt"].strip()
         style_short = project.get("style_block_short", "").strip()
         full_prompt = f"{image_prompt.rstrip('.')}. {style_short}" if style_short else image_prompt
@@ -482,6 +602,7 @@ def main() -> None:
             output_path=output_path,
             cf_credentials=cf_credentials,
             nvidia_key=nvidia_key,
+            gemini_key=gemini_key,
             width=args.width,
             height=args.height,
         )
