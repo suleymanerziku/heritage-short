@@ -1,0 +1,10 @@
+{
+  "input_hash": "b555e53550b8",
+  "shot_id": "shot_05",
+  "model": "ffmpeg_ken_burns",
+  "motion_type": "zoom_in",
+  "target_duration_s": 8.12,
+  "fps": 24,
+  "latency_s": 7.297,
+  "fallback_from": "wan22"
+}

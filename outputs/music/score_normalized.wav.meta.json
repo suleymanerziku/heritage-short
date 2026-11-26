@@ -1,0 +1,11 @@
+{
+  "input_hash": "35b944a32317",
+  "source_audio": "outputs\\music\\score_placeholder.wav",
+  "source_model": "procedural_meditation_pad",
+  "target_lufs": -18.0,
+  "actual_duration_s": 82.0,
+  "bpm": 68,
+  "key": "D minor",
+  "seed": 1974,
+  "latency_s": 9.766
+}

@@ -1,0 +1,23 @@
+[Script Info]
+Title: Heritage Short Subtitles (9:16)
+ScriptType: v4.00+
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+PlayResX: 720
+PlayResY: 1280
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,38,&H00FFFFFF,&H000000FF,&H00101010,&H80000000,1,0,0,0,100,100,0,0,1,2.5,1.5,2,40,40,240,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:08.27,Default,,0,0,0,,In childhood, when Kiremt rain drummed\Non the roof, our home filled with
+Dialogue: 0,0:00:08.27,0:00:17.16,Default,,0,0,0,,Mother spreads fresh green grass and\Nkindles charcoal in the clay stove.
+Dialogue: 0,0:00:17.16,0:00:24.08,Default,,0,0,0,,Raw coffee beans placed on the black\Niron pan begin the sacred ceremony.
+Dialogue: 0,0:00:24.08,0:00:31.24,Default,,0,0,0,,As an impatient child, I would beg\Nher: 'Hurry Mama, brew it quickly!'
+Dialogue: 0,0:00:31.24,0:00:39.36,Default,,0,0,0,,She would only smile, stirring the pan\Nas fragrant white smoke filled the
+Dialogue: 0,0:00:39.36,0:00:48.00,Default,,0,0,0,,As beans turned golden brown and\Npopped, their crackle calmed my
+Dialogue: 0,0:00:48.00,0:00:57.02,Default,,0,0,0,,She said: 'Slowly, an egg learns to\Nwalk; rushing ruins both coffee and
+Dialogue: 0,0:00:57.02,0:01:05.94,Default,,0,0,0,,As abol poured from the clay jebena, I\Ntasted the sweetness of patience.
+Dialogue: 0,0:01:05.94,0:01:16.78,Default,,0,0,0,,Years later in a rushed world, I still\Nhear her voice and remember not to

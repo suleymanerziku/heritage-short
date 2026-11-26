@@ -25,16 +25,16 @@ radio_cut:
 radio: narration radio_cut
 
 keyframes:
-	$(PYTHON) pipeline/generate_keyframes.py
+	$(PYTHON) pipeline/keyframes.py
 
 shots:
-	$(PYTHON) pipeline/generate_shots.py
+	$(PYTHON) pipeline/shots.py
 
 music:
-	$(PYTHON) pipeline/generate_music.py
+	$(PYTHON) pipeline/music.py
 
 assemble:
-	$(PYTHON) pipeline/assemble_final.py
+	$(PYTHON) pipeline/assemble.py
 
 film: validate narration keyframes shots music assemble
 
